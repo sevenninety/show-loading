@@ -1,23 +1,11 @@
-/***************
- * CSS Includes
- ***************/
-// Anonymous function to load CSS files required for this module
-(function(){
-    var link = document.createElement("link");
-    link.type = "text/css";
-    link.rel = "stylesheet";
-    // TODO: We don't want to use the widget path really
-    link.href = require.toUrl("app/dijit/css/Loading.css");
-    document.getElementsByTagName("head").item(0).appendChild(link);
-})();
-
 define([
 	"dojo/_base/declare",
 	"dojo/_base/lang",
 	"dijit/_WidgetBase", 
 	"dijit/_TemplatedMixin", 
 	"dojo/text!./templates/Loading.html",
-	"esri/domUtils"],
+	"esri/domUtils",
+    "xstyle/css!./css/Loading.css"],
     function(declare, lang, _WidgetBase, _TemplatedMixin, template, domUtils){
         return declare([_WidgetBase, _TemplatedMixin], {
         	// The template
